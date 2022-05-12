@@ -1,5 +1,6 @@
 package Task09_1;
 
+import static java.lang.Math.E;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Vector;
@@ -26,9 +27,15 @@ public class SumAll {
 
     }
 
-    public int sumNums1(Vector v) {
+    public int sumNums1(Vector v) 
+    {
         int sum = 0;
-        Iterator iter;
+        Iterator iter = v.iterator();
+        
+        while(iter.hasNext())
+        {
+            sum += (int) iter.next();        
+        }
         //add your code here
 
         return sum;
