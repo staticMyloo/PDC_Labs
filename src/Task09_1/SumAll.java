@@ -43,13 +43,23 @@ public class SumAll {
 
     public int sumNums2(Vector<Integer> v) {
         int sum = 0;
-        //add your code here
+        int i = v.size();
+        
+        for(;i > 0; i--)
+        {
+            Integer next = v.get(i-1);
+            sum += next;
+        }
+        
         return sum;
     }
 
     public int sumNums3(Object... objs) {
         int sum = 0;
-        //add your code here
+        for(Object ob : objs)
+        {
+            sum += (int) ob;
+        }
         return sum;
     }
 
