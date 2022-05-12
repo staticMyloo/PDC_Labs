@@ -6,6 +6,9 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 
 public class SaveLog extends JFrame {
@@ -20,9 +23,9 @@ public class SaveLog extends JFrame {
         file = new File("log.txt");
     }
 
-    public void writeToFile() {
+    public void writeToFile() throws IOException {
         String str = text.getText();
-        Log log = new Log(str);
+        Log log = Log.getSingletonInstance(str);
 
     }
 
@@ -45,7 +48,11 @@ public class SaveLog extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("You clicked the button");
 
-                savlog.writeToFile();
+                try {
+                    savlog.writeToFile();
+                } catch (IOException ex) {
+                    Logger.getLogger(SaveLog.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 System.out.println(Log.instanceNumber);
             }
         });
