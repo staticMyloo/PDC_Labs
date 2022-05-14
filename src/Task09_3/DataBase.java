@@ -105,7 +105,6 @@ public class DataBase
             statement.executeUpdate("UPDATE UserInfo SET score=" + score + " WHERE userid=" + username + "'");
         }
         catch(SQLException ex)
-        {}
-        
+        {}  
     }
 }
