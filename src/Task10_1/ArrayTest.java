@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class ArrayTest {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) 
+    {
         ArrayTest at = new ArrayTest();
         double i = at.find(0, new int[]{1, 4, 2, 5, 7, 9});
         System.out.println(i);
@@ -22,19 +23,26 @@ public class ArrayTest {
         int count = 0;
         double result = 0;
         Arrays.sort(intArray);
-        if (index == 0) {
-            for (int i : intArray) {
+        if (index == 0) 
+        {
+            for (int i : intArray) 
+            {
                 sum += i;
                 count++;
             }
-            if (count != 0) {
+            if (count != 0) 
+            {
                 result = 1.0 * sum / count;
-            } else {
+            } else 
+            {
                 result = sum / count;
             }
-        } else if (index == 1) {
+        } 
+        else if (index == 1) 
+        {
             result = intArray[0];
-        } else if (index == 2) {
+        } else if (index == 2)
+        {
             result = intArray[intArray.length - 1];
         }
         return result;
